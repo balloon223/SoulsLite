@@ -42,19 +42,19 @@ namespace SG
 
         public void TakeDamage(int damage)
         {
-            currentHealth = currentHealth - damage;
+            if (isDead)
+                return;
 
+            currentHealth = currentHealth - damage;
             healthbar.SetCurrentHealth(currentHealth);
 
-            if (currentHealth > 0)
-            {
-                animatorHandler.PlayTargetAnimation("Damage_01", true);
-            }
+            animatorHandler.PlayTargetAnimation("Damage_01", true);
 
-            if(currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 currentHealth = 0;
                 animatorHandler.PlayTargetAnimation("Death_01", true);
+                isDead = true;
                 //HANDLE PLAYER DEATH
             }
         }

@@ -6,7 +6,13 @@ namespace SG
 {
     public class PursueTargetState : State
     {
+        EnemyStats enemyStats;
         public CombatStanceState combatStanceState;
+
+        public void Awake()
+        {
+            enemyStats = GetComponent<EnemyStats>();
+        }
 
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
@@ -25,7 +31,10 @@ namespace SG
                 enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
             }
 
-            HandleRotateTowardsTarget(enemyManager);
+            if (!enemyStats.isDead)
+            {
+                HandleRotateTowardsTarget(enemyManager);
+            }
             enemyManager.navmeshAgent.transform.localPosition = Vector3.zero;
             enemyManager.navmeshAgent.transform.localRotation = Quaternion.identity;
 

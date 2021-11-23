@@ -30,6 +30,9 @@ namespace SG
 
         public void TakeDamage(int damage)
         {
+            if (isDead)
+                return;
+
             currentHealth = currentHealth - damage;
 
             if (currentHealth > 0)
@@ -42,6 +45,7 @@ namespace SG
             {
                 currentHealth = 0;
                 animator.Play("Death_01");
+                isDead = true;
                 audioSource.Play();
                 //HANDLE ENEMY DEATH
             }

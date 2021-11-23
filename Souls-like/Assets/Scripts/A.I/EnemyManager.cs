@@ -62,7 +62,7 @@ namespace SG
             {
                 State nextState = currentState.Tick(this, enemyStats, enemyAnimatorManager);
 
-                if (nextState != null)
+                if (nextState != null && enemyStats.isDead == false)
                 {
                     SwitchToNextState(nextState);
                 }

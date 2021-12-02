@@ -6,6 +6,7 @@ namespace SG
 {
     public class PlayerStats : CharacterStats
     {
+        AudioSource audioSource;
         PlayerManager playerManager;
         public HealthBar healthbar;
         public StaminaBar staminabar;
@@ -16,6 +17,7 @@ namespace SG
 
         private void Awake()
         {
+            audioSource = GetComponent<AudioSource>();
             playerManager = GetComponent<PlayerManager>();
             healthbar = FindObjectOfType<HealthBar>();
             staminabar = FindObjectOfType<StaminaBar>();
@@ -52,6 +54,8 @@ namespace SG
 
             if (isDead)
                 return;
+
+            audioSource.Play();
 
             currentHealth = currentHealth - damage;
             healthbar.SetCurrentHealth(currentHealth);

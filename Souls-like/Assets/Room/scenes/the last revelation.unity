@@ -1527,7 +1527,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   lookSpeed: 0.01
-  followSpeed: 0.3
+  followSpeed: 0.01
   pivotSpeed: 0.01
   minimumPivot: -35
   maximumPivot: 35

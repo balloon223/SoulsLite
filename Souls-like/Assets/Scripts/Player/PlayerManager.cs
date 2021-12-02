@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SG
 {
@@ -130,5 +131,12 @@ namespace SG
             }
         }
 
+        void OnTriggerEnter(Collider trigger)
+        {
+            if (trigger.gameObject.tag == "door")
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
     }
 }

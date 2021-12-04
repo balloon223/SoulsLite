@@ -7,19 +7,23 @@ namespace SG
     public class EnemyStats : CharacterStats
     {
         AudioSource audioSource;
-
+        EnemyBossManager enemyBossManager;
         Animator animator;
+
+        public UIEnemyHealthBar enemyHealthBar;
 
         private void Awake()
         {
             audioSource = GetComponent<AudioSource>();
+            enemyBossManager = GetComponent<EnemyBossManager>();
             animator = GetComponentInChildren<Animator>();
+            maxHealth = SetMaxHealthFromHealthLevel();
+            currentHealth = maxHealth;
         }
 
         void Start()
         {
-            maxHealth = SetMaxHealthFromHealthLevel();
-            currentHealth = maxHealth;
+            enemyHealthBar.SetMaxHealth(maxHealth);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -32,13 +36,16 @@ namespace SG
         {
             if (isDead)
                 return;
+            audioSource.Play();
+
 
             currentHealth = currentHealth - damage;
+            enemyBossManager.UpdateBossHealthBar(currentHealth);
+            //enemyHealthBar.SetHealth(currentHealth);
 
             if (currentHealth > 0)
             {
                 animator.Play("Damage_01");
-                audioSource.Play();
             }
 
             if (currentHealth <= 0)

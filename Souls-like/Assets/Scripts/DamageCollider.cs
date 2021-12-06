@@ -7,6 +7,8 @@ namespace SG
     public class DamageCollider : MonoBehaviour
     {
         Collider damageCollider;
+        public GameObject hitParticles;
+        public Transform weaponTip;
 
         public int currentWeaponDamage = 25;
 
@@ -42,6 +44,7 @@ namespace SG
 
             if(collision.tag == "Enemy")
             {
+                Instantiate(hitParticles, weaponTip.transform.position, Quaternion.identity);
                 EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
 
                 if(enemyStats != null)

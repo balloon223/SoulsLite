@@ -650,6 +650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade8f93477478af41bcaee54eeb161e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticles: {fileID: 8756194656547612090, guid: 438f9e8e6dcccf641b4681b7d19e7241,
+    type: 3}
   currentWeaponDamage: 25
 --- !u!1 &4583999802873294116
 GameObject:

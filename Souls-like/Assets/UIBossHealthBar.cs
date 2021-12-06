@@ -18,7 +18,7 @@ namespace SG
 
         private void Start()
         {
-            SetHealthBarToActive();
+            SetHealthBarToInactive();
         }
 
         public void SetBossName(string name)

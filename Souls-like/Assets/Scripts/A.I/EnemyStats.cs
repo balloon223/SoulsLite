@@ -9,8 +9,9 @@ namespace SG
         AudioSource audioSource;
         EnemyBossManager enemyBossManager;
         Animator animator;
-
         public UIEnemyHealthBar enemyHealthBar;
+
+        public bool isBoss;
 
         private void Awake()
         {
@@ -23,7 +24,10 @@ namespace SG
 
         void Start()
         {
-            enemyHealthBar.SetMaxHealth(maxHealth);
+            if (!isBoss)
+            {
+                enemyHealthBar.SetMaxHealth(maxHealth);
+            }
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -38,10 +42,16 @@ namespace SG
                 return;
             audioSource.Play();
 
-
             currentHealth = currentHealth - damage;
-            enemyBossManager.UpdateBossHealthBar(currentHealth);
-            //enemyHealthBar.SetHealth(currentHealth);
+
+            if (!isBoss)
+            {
+                enemyHealthBar.SetHealth(currentHealth);
+            }
+            else if (isBoss && enemyBossManager != null)
+            {
+                enemyBossManager.UpdateBossHealthBar(currentHealth);
+            }
 
             if (currentHealth > 0)
             {

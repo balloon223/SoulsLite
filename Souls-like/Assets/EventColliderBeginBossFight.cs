@@ -7,12 +7,10 @@ namespace SG
     public class EventColliderBeginBossFight : MonoBehaviour
     {
         WorldEventManager worldEventManager;
-        AudioSource audio;
 
         private void Awake()
         {
             worldEventManager = FindObjectOfType<WorldEventManager>();
-            audio = GetComponent<AudioSource>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -20,19 +18,6 @@ namespace SG
             if (other.tag == "Player")
             {
                 worldEventManager.ActivateBossFight();
-                audio.Play();
-            }
-        }
-
-        public void Update()
-        {
-            if (worldEventManager.bossFightIsActive)
-            {
-                audio.Play();
-            }
-            else
-            {
-                audio.Stop();
             }
         }
     }

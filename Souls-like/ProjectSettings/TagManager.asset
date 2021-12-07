@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Environment
   - door
+  - BossEventCollider
   layers:
   - Default
   - TransparentFX

@@ -34,6 +34,7 @@ namespace SG
         {
             if (collision.tag == "Player")
             {
+                Instantiate(hitParticles, collision.transform.position, Quaternion.identity);
                 PlayerStats playerStats = collision.GetComponent<PlayerStats>();
             
                 if(playerStats != null)

@@ -6,6 +6,8 @@ namespace SG
 {
     public class EnemyStats : CharacterStats
     {
+        Level1Manager level1Manager;
+
         AudioSource audioSource;
         EnemyBossManager enemyBossManager;
         Animator animator;
@@ -15,6 +17,7 @@ namespace SG
 
         private void Awake()
         {
+            level1Manager = FindObjectOfType<Level1Manager>();
             audioSource = GetComponent<AudioSource>();
             enemyBossManager = GetComponent<EnemyBossManager>();
             animator = GetComponentInChildren<Animator>();
@@ -64,6 +67,7 @@ namespace SG
                 animator.Play("Death_01");
                 isDead = true;
                 audioSource.Play();
+                level1Manager.numberOfEnemies--;
                 //HANDLE ENEMY DEATH
             }
         }

@@ -15,7 +15,7 @@ MonoBehaviour:
   actionAnimation: OH_Heavy_Attack_01
   attackScore: 3
   recoveryTime: 2
-  maximumAttackAngle: 360
-  minimumAttackAngle: -360
+  maximumAttackAngle: 30
+  minimumAttackAngle: -30
   minimumDistanceNeededToAttack: 0
   maximumDistanceNeededToAttack: 5

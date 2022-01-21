@@ -4682,9 +4682,9 @@ MonoBehaviour:
   isInteracting: 0
   rotationSpeed: 10
   maximumAttackRange: 5
-  detectionRadius: 50
-  maximumDetectionAngle: 300
-  minimumDetectionAngle: -300
+  detectionRadius: 10
+  maximumDetectionAngle: 50
+  minimumDetectionAngle: -50
   currentRecoveryTime: 3
 --- !u!114 &926947889
 MonoBehaviour:
@@ -5569,7 +5569,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: 0}

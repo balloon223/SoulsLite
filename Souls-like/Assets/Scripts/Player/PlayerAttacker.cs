@@ -11,6 +11,7 @@ namespace SG
         WeaponSlotManager weaponSlotManager;
         public string lastAttack;
 
+
         private void Awake()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();

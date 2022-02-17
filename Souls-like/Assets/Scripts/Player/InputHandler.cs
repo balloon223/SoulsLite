@@ -48,6 +48,7 @@ namespace SG
         Vector2 movementInput;
         Vector2 cameraInput;
 
+
         private void Awake()
         {
             playerAttacker = GetComponent<PlayerAttacker>();
@@ -150,6 +151,7 @@ namespace SG
                     animatorHandler.anim.SetBool("isUsingRightHand", true);
                     playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
                 }
+
             }
 
             if (rt_input)

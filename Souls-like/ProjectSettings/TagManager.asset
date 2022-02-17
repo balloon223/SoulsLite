@@ -9,6 +9,7 @@ TagManager:
   - Environment
   - door
   - BossEventCollider
+  - Player Weapon Trail
   layers:
   - Default
   - TransparentFX

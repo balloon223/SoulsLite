@@ -11091,7 +11091,7 @@ MonoBehaviour:
   combatStanceState: {fileID: 947531916}
   enemyAttacks:
   - {fileID: 11400000, guid: 504d9fb8a49f383478a55226b584b87a, type: 2}
-  - {fileID: 11400000, guid: a79182c8eb2fb254d8031069f489f61a, type: 2}
+  - {fileID: 11400000, guid: 2dd1e910a26ce7e42b7a143797a86854, type: 2}
   - {fileID: 11400000, guid: 2dd1e910a26ce7e42b7a143797a86854, type: 2}
   currentAttack: {fileID: 0}
 --- !u!1 &1818010514

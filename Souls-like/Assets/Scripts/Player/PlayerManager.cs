@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace SG
 {
@@ -27,6 +26,8 @@ namespace SG
         public bool isUsingRightHand;
         public bool isUsingLeftHand;
         public bool isInvulnerable;
+
+        public bool canMoveToRoom2;
 
         private void Awake()
         {
@@ -135,7 +136,7 @@ namespace SG
         {
             if (trigger.gameObject.tag == "door")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                canMoveToRoom2 = true;
             }
         }
     }

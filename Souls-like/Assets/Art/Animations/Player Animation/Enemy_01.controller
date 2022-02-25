@@ -887,9 +887,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.40417862
   m_TransitionOffset: 0
-  m_ExitTime: 0.71153843
+  m_ExitTime: 0.96334624
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -950,7 +950,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OH_Light_Attack_Katana_01
-  m_Speed: 1
+  m_Speed: 0.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 656754621994987288}
@@ -963,7 +963,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b32c76fbac482e944899430062b450b6, type: 2}
+  m_Motion: {fileID: 7400000, guid: cd821cc4a1a8ebc40b5dab36ec78b01f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1173,7 +1173,7 @@ AnimatorStateMachine:
     m_Position: {x: -60, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7459109265466923486}
-    m_Position: {x: -60, y: 220, z: 0}
+    m_Position: {x: -70, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8287469178504763665}
     m_Position: {x: -60, y: 270, z: 0}
@@ -1953,7 +1953,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e140a67ac6b465a4a84dc63cd9b3f0e7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 780b8663bb05ec443b429e6ac0c3e18f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

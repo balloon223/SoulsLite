@@ -47,13 +47,15 @@ namespace SG
         private void Update()
         {
             HandleRecoveryTimer();
+            HandleStateMachine();
 
             isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
-            HandleStateMachine();
+            navmeshAgent.transform.localPosition = Vector3.zero;
+            navmeshAgent.transform.localRotation = Quaternion.identity;
         }
 
         private void HandleStateMachine()

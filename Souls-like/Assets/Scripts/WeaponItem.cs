@@ -26,6 +26,10 @@ namespace SG
         public string OH_Heavy_Attack_1;
         public string OH_Heavy_Attack_2;
 
+        //Ultimate
+        public string Backstep;
+        public string GroundSmash;
+
         [Header("Stamina Costs")]
         public int baseStamina;
         public float lightAttackMultiplier;

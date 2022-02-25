@@ -87,7 +87,7 @@ namespace SG
             {
                 staminaRegenerationTimer += Time.deltaTime;
 
-                if (currentStamina < maxStamina && staminaRegenerationTimer > 1f)
+                if (currentStamina < maxStamina && staminaRegenerationTimer > 0.3f)
                 {
                     currentStamina += staminaRegenerationAmount * Time.deltaTime;
                     staminabar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));

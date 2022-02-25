@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Room/scenes/the last revelation.unity
     guid: fffc368ce7c545240a157d1fa3ce0e97
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/TransitionScene 1-2.unity
+    guid: 4fe927c295329a743b6f84555e363e37
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1

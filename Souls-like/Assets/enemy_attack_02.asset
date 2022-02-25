@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: enemy_attack_02
   m_EditorClassIdentifier: 
   actionAnimation: OH_Light_Attack_01
-  attackScore: 3
+  attackScore: 10
   recoveryTime: 4
   maximumAttackAngle: 35
   minimumAttackAngle: -35

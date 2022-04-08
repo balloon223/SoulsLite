@@ -7,6 +7,7 @@ namespace SG
     public class DamageCollider_main : MonoBehaviour
     {
         PlayerManager playerManager;
+        PlayerStats playerStats;
 
         Collider damageCollider;
         public GameObject hitParticles;
@@ -20,6 +21,7 @@ namespace SG
         private void Awake()
         {
             playerManager = FindObjectOfType<PlayerManager>();
+            playerStats = FindObjectOfType<PlayerStats>();
 
             damageCollider = GetComponent<Collider>();
             damageCollider.gameObject.SetActive(true);
@@ -41,11 +43,12 @@ namespace SG
 
         private void OnTriggerEnter(Collider collision)
         {
+            Vector3 closestHitPoint = collision.ClosestPoint(transform.position);
             if (collision.tag == "Player")
             {
                 if (playerManager.isInvulnerable == false)
                 {
-                    Instantiate(hitParticles, collision.transform.position, Quaternion.identity);
+                    Instantiate(hitParticles, closestHitPoint, Quaternion.identity);
                     PlayerStats playerStats = collision.GetComponent<PlayerStats>();
 
                     if (playerStats != null)
@@ -61,12 +64,25 @@ namespace SG
 
             if(collision.tag == "Enemy")
             {
-                Instantiate(hitParticles, collision.transform.position, Quaternion.identity);
+                Instantiate(hitParticles, closestHitPoint, Quaternion.identity);
                 EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
+                EnemyManager enemyManager = collision.GetComponent<EnemyManager>();
 
                 if(enemyStats != null)
                 {
                     enemyStats.TakeDamage(currentWeaponDamage);
+                    enemyManager.currentTarget = playerStats;
+                }
+            }
+
+            if (collision.tag == "Breakable Object")
+            {
+                Instantiate(hitParticles, closestHitPoint, Quaternion.identity);
+                ObjectStats objectStats = collision.GetComponent<ObjectStats>();
+
+                if (objectStats != null)
+                {
+                    objectStats.TakeDamage(currentWeaponDamage);
                 }
             }
         }

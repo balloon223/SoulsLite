@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VIDE_Data;
 
 namespace SG
 {
@@ -17,6 +18,7 @@ namespace SG
         public GameObject itemInteractableGameObject;
 
         public bool isInteracting;
+        public bool isInDialogue = false;
 
         [Header("Player Flags")]
         public bool isSprinting;
@@ -67,6 +69,7 @@ namespace SG
             float delta = Time.fixedDeltaTime;
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+            playerLocomotion.HandleRotation(delta);
         }
 
         private void LateUpdate()

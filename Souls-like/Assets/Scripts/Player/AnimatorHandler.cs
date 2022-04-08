@@ -25,6 +25,12 @@ namespace SG
 
         public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
         {
+            if (playerManager.isInDialogue)
+            {
+                verticalMovement = 0;
+                horizontalMovement = 0;
+            }
+
             #region Vertical
             float v = 0;
 
@@ -75,7 +81,7 @@ namespace SG
             }
             #endregion
 
-            if(isSprinting)
+            if(isSprinting && !playerManager.isInDialogue)
             {
                 v = 2;
                 h = horizontalMovement;
@@ -88,6 +94,10 @@ namespace SG
         public void CanRotate()
         {
             canRotate = true;
+            if (playerManager.isInDialogue)
+            {
+                canRotate = false;
+            }
         }
 
         public void StopRotation()

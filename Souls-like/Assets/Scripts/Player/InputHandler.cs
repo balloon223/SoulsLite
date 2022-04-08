@@ -127,7 +127,7 @@ namespace SG
             }
             else
             {
-                if(rollInputTimer > 0 && rollInputTimer < 0.5f)
+                if(rollInputTimer > 0 && rollInputTimer < 0.3f)
                 {
                     sprintFlag = false;
                     rollFlag = true;

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: enemy_attack_01
   m_EditorClassIdentifier: 
   actionAnimation: OH_Heavy_Attack_01
-  attackScore: 3
+  attackScore: 6
   recoveryTime: 4
   maximumAttackAngle: 360
   minimumAttackAngle: -360
   minimumDistanceNeededToAttack: 0
-  maximumDistanceNeededToAttack: 5
+  maximumDistanceNeededToAttack: 20

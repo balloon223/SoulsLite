@@ -42,6 +42,7 @@ namespace SG
             #region Weapon Inventory Slots
             for (int i = 0; i <weaponInventorySlots.Length; i++)
             {
+                /*
                 if (i < playerInventory.weaponsInventory.Count)
                 {
                         if(weaponInventorySlots.Length < playerInventory.weaponsInventory.Count)
@@ -55,6 +56,7 @@ namespace SG
                 {
                         weaponInventorySlots[i].ClearInventorySlot();
                 }
+                */
             }
 
 

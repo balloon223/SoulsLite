@@ -3481,6 +3481,7 @@ GameObject:
   - component: {fileID: 877961021}
   - component: {fileID: 877961020}
   - component: {fileID: 877961019}
+  - component: {fileID: 877961029}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -3660,6 +3661,7 @@ MonoBehaviour:
   interactableUIGameObject: {fileID: 1978923826}
   itemInteractableGameObject: {fileID: 2072889842}
   isInteracting: 0
+  isInDialogue: 0
   isSprinting: 0
   isInAir: 0
   isGrounded: 0
@@ -3690,10 +3692,11 @@ MonoBehaviour:
   groundDirectionRayDistance: 0.2
   inAirTimer: 0
   movementSpeed: 2
-  walkingSpeed: 1
-  sprintSpeed: 4
+  walkingSpeed: 5
+  sprintSpeed: 10
   rotationSpeed: 10
   fallingSpeed: 700
+  rollStaminaCost: 23
   characterCollider: {fileID: 877961027}
   characterCollisionBlockerCollider: {fileID: 147188635}
 --- !u!114 &877961025
@@ -3782,6 +3785,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &877961029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877961018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724c581402efcfe4ea820123fa9c998e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: VIDE User
+  diagUI: {fileID: 0}
+  questUI: {fileID: 0}
+  blue: {fileID: 0}
+  inTrigger: {fileID: 0}
+  demo_Items: []
+  demo_ItemInventory: []
 --- !u!1 &901083443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,9 +4846,9 @@ MonoBehaviour:
   environmentLayer:
     serializedVersion: 2
     m_Bits: 0
-  lookSpeed: 0.01
-  followSpeed: 0.01
-  pivotSpeed: 0.01
+  lookSpeed: 0.002
+  followSpeed: 0.3
+  pivotSpeed: 0.001
   minimumPivot: -35
   maximumPivot: 35
   cameraSphereRadius: 0.2
@@ -6407,6 +6429,7 @@ MonoBehaviour:
   sprintSpeed: 7
   rotationSpeed: 10
   fallingSpeed: 45
+  rollStaminaCost: 23
   characterCollider: {fileID: 0}
   characterCollisionBlockerCollider: {fileID: 0}
 --- !u!114 &1708647989
@@ -6425,6 +6448,7 @@ MonoBehaviour:
   interactableUIGameObject: {fileID: 1978923826}
   itemInteractableGameObject: {fileID: 2072889842}
   isInteracting: 0
+  isInDialogue: 0
   isSprinting: 0
   isInAir: 0
   isGrounded: 0

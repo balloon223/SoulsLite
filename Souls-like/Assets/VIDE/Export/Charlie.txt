@@ -1,0 +1,246 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Charlie
+---------------------------------
+#NODEID#
+5
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Who are you?	
+#COMMENT#
+How did I end up here?
+---------------------------------
+#NODEID#
+6
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+How did you get out?
+#COMMENT#
+I spawned here!
+#COMMENT#
+Yes I should.
+---------------------------------
+#NODEID#
+10
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+(Ha- right....)
+#COMMENT#
+[Leave]
+---------------------------------
+#NODEID#
+13
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+The Soaring Ones?
+#COMMENT#
+Ugh... bye.
+---------------------------------
+#NODEID#
+0
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Where am I?	
+#COMMENT#
+What's wrong?
+#COMMENT#
+Are you a crab?
+---------------------------------
+#NODEID#
+2
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+You're in Stellis town, but our town was flooded. Please help us!
+---------------------------------
+#NODEID#
+3
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+There was a heavy rain last night. When I opened my eyes, my town was already flooded!
+---------------------------------
+#NODEID#
+4
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+That's it! Keep your intrusive mouth shut!
+---------------------------------
+#NODEID#
+7
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+You do that!
+#COMMENT#
+I'm sick of these caps spawning wherever they please.
+#COMMENT#
+Begone!
+---------------------------------
+#NODEID#
+8
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+No, you don't. That's but a filthy lie. Go away, kid.
+---------------------------------
+#NODEID#
+9
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+I did as well! But I didn't go around bothering caps!
+---------------------------------
+#NODEID#
+11
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+...excuse me?
+#COMMENT#
+Did I just hear a whisper?
+#COMMENT#
+Look, kid...
+#COMMENT#
+GO
+#COMMENT#
+AWAY.
+---------------------------------
+#NODEID#
+12
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+I am Fordran, Green Priest of Stellis. I protect Stellis by making deals with the Soaring Ones. It seems that the Soaring Ones are mad.
+---------------------------------
+#NODEID#
+14
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+I don't know! You just fell from the sky! Don't you remember how you came here?
+#COMMENT#
+I OWN this place.
+---------------------------------
+#NODEID#
+1
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+Help!
+---------------------------------
+#NODEID#
+15
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+Watch your tongue. I shall let it slip once. Should you disrespect the ones that guide us once more, I will have to shut it myself.
+#COMMENT#
+CHIIILL?!?!?!?!??!?!?
+---------------------------------
+#NODEID#
+16
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+What now-
+#COMMENT#
+What do you think you are doing with that [WEAPON]?!
+#COMMENT#
+Get that thing away from me!
+---------------------------------
+#NODEID#
+18
+#TAG#
+Fordran
+#ISPLAYER#
+False
+---
+#COMMENT#
+GO AWAY!
+---------------------------------
+#NODEID#
+19
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Comment...
+---------------------------------
+#NODEID#
+20
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Is that how you ask for help?
+#COMMENT#
+Sorry. I didn't know.
+---------------------------------
+#END#

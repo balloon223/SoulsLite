@@ -79,7 +79,7 @@ namespace SG
 
         public void RegenerateStamina()
         {
-            if(playerManager.isInteracting)
+            if (playerManager.isInteracting)
             {
                 staminaRegenerationTimer = 0;
             }
@@ -92,6 +92,14 @@ namespace SG
                     currentStamina += staminaRegenerationAmount * Time.deltaTime;
                     staminabar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
                 }
+            }
+        }
+
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (collision.tag == "Water")
+            {
+                animatorHandler.PlayTargetAnimation("Death_01", true);
             }
         }
     }

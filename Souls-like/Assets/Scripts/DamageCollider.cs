@@ -58,17 +58,6 @@ namespace SG
                     Instantiate(absorbParticles, collision.transform.position, Quaternion.identity);
                 }
             }
-
-            if(collision.tag == "Enemy")
-            {
-                Instantiate(hitParticles, collision.transform.position, Quaternion.identity);
-                EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
-
-                if(enemyStats != null)
-                {
-                    enemyStats.TakeDamage(currentWeaponDamage);
-                }
-            }
         }
     }
 }

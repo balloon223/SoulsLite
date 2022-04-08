@@ -6,6 +6,8 @@ namespace SG
 {
     public class PlayerLocomotion : MonoBehaviour
     {
+        public bool isRolling;
+        public float rollTimer;
         CameraHandler cameraHandler;
         PlayerManager playerManager;
         PlayerStats playerStats;
@@ -77,64 +79,84 @@ namespace SG
         Vector3 normalVector;
         Vector3 targetPosition;
 
-        private void HandleRotation(float delta)
+        public void HandleRotation(float delta)
         {
-            if (inputHandler.lockOnFlag)
+            if (!playerManager.isInDialogue)
             {
-                if (inputHandler.sprintFlag || inputHandler.rollFlag)
+                if (animatorHandler.canRotate)
                 {
-                    Vector3 targetDirection = Vector3.zero;
-                    targetDirection = cameraHandler.cameraTransform.forward * inputHandler.vertical;
-                    targetDirection += cameraHandler.cameraTransform.right * inputHandler.horizontal;
-                    targetDirection.Normalize();
-                    targetDirection.y = 0;
-
-                    if (targetDirection == Vector3.zero)
+                    if (inputHandler.lockOnFlag)
                     {
-                        targetDirection = transform.forward;
+                        if (inputHandler.sprintFlag || inputHandler.rollFlag)
+                        {
+                            Vector3 targetDirection = Vector3.zero;
+                            targetDirection = cameraHandler.cameraTransform.forward * inputHandler.vertical;
+                            targetDirection += cameraHandler.cameraTransform.right * inputHandler.horizontal;
+                            targetDirection.Normalize();
+                            targetDirection.y = 0;
+
+                            if (targetDirection == Vector3.zero)
+                            {
+                                targetDirection = transform.forward;
+                            }
+
+                            Quaternion tr = Quaternion.LookRotation(targetDirection);
+                            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
+
+                            transform.rotation = targetRotation;
+                        }
+                        else
+                        {
+                            Vector3 rotationDirection = moveDirection;
+                            rotationDirection = cameraHandler.currentLockOnTarget.transform.position - transform.position;
+                            rotationDirection.y = 0;
+                            rotationDirection.Normalize();
+                            Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
+                            transform.rotation = targetRotation;
+                        }
                     }
+                    else
+                    {
+                        Vector3 targetDir = Vector3.zero;
+                        float moveOverride = inputHandler.moveAmount;
 
-                    Quaternion tr = Quaternion.LookRotation(targetDirection);
-                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
+                        targetDir = cameraObject.forward * inputHandler.vertical;
+                        targetDir += cameraObject.right * inputHandler.horizontal;
 
-                    transform.rotation = targetRotation;
+                        targetDir.Normalize();
+                        targetDir.y = 0;
+
+                        if (targetDir == Vector3.zero)
+                            targetDir = myTransform.forward;
+
+                        float rs = rotationSpeed;
+
+                        Quaternion tr = Quaternion.LookRotation(targetDir);
+                        Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+
+                        myTransform.rotation = targetRotation;
+                    }
                 }
-                else
-                {
-                    Vector3 rotationDirection = moveDirection;
-                    rotationDirection = cameraHandler.currentLockOnTarget.transform.position - transform.position;
-                    rotationDirection.y = 0;
-                    rotationDirection.Normalize();
-                    Quaternion tr = Quaternion.LookRotation(rotationDirection);
-                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
-                    transform.rotation = targetRotation;               
-                }
-            }
-            else
-            {
-                Vector3 targetDir = Vector3.zero;
-                float moveOverride = inputHandler.moveAmount;
 
-                targetDir = cameraObject.forward * inputHandler.vertical;
-                targetDir += cameraObject.right * inputHandler.horizontal;
-
-                targetDir.Normalize();
-                targetDir.y = 0;
-
-                if (targetDir == Vector3.zero)
-                    targetDir = myTransform.forward;
-
-                float rs = rotationSpeed;
-
-                Quaternion tr = Quaternion.LookRotation(targetDir);
-                Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
-
-                myTransform.rotation = targetRotation;
             }
         }
 
         public void HandleMovement(float delta)
         {
+            if (!playerManager.isInDialogue)
+            {
+                movementSpeed = 3;
+                walkingSpeed = 4;
+                sprintSpeed = 7;
+            }
+            else
+            {
+                movementSpeed = 0;
+                walkingSpeed = 0;
+                sprintSpeed = 0;
+            }
+
             if (inputHandler.rollFlag)
                 return;
 
@@ -179,39 +201,49 @@ namespace SG
             {
                 animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
             }
-
-            if (animatorHandler.canRotate)
-            {
-                HandleRotation(delta);
-            }
         }
 
         public void HandleRollingAndSprinting(float delta)
         {
-            if (animatorHandler.anim.GetBool("isInteracting"))
-                return;
-
-            if (playerStats.currentStamina <= 0)
-                return;
-
-            if(inputHandler.rollFlag)
+            if (!playerManager.isInDialogue)
             {
-                moveDirection += cameraObject.forward  * inputHandler.vertical;
-                moveDirection += cameraObject.right * inputHandler.horizontal;
+                if (animatorHandler.anim.GetBool("isInteracting"))
+                    return;
 
+                if (playerStats.currentStamina <= 0)
+                    return;
 
-                if (inputHandler.moveAmount > 0)
+                if (inputHandler.rollFlag)
                 {
-                    animatorHandler.PlayTargetAnimation("Rolling", true);
-                    moveDirection.y = 0;
-                    Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
-                    myTransform.rotation = rollRotation;
-                    playerStats.TakeStaminaDamage(rollStaminaCost);
+                    moveDirection += cameraObject.forward * inputHandler.vertical;
+                    moveDirection += cameraObject.right * inputHandler.horizontal;
+
+
+                    if (inputHandler.moveAmount > 0)
+                    {
+                        animatorHandler.PlayTargetAnimation("Rolling", true);
+                        moveDirection.y = 0;
+                        Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
+                        myTransform.rotation = rollRotation;
+                        playerStats.TakeStaminaDamage(rollStaminaCost);
+                        isRolling = true;
+                        rollTimer = 0.3f;
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation("Backstep", true);
+                        playerStats.TakeStaminaDamage(backstepStaminaCost);
+                    }
+                }
+
+                if (rollTimer > 0)
+                {
+                    rollTimer -= Time.deltaTime;
                 }
                 else
                 {
-                    animatorHandler.PlayTargetAnimation("Backstep", true);
-                    playerStats.TakeStaminaDamage(backstepStaminaCost);
+                    rollTimer = 0;
+                    isRolling = false;
                 }
             }
         }

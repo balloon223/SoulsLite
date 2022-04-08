@@ -10,6 +10,9 @@ TagManager:
   - door
   - BossEventCollider
   - Player Weapon Trail
+  - Water
+  - Breakable Object
+  - attacks
   layers:
   - Default
   - TransparentFX
@@ -23,7 +26,7 @@ TagManager:
   - Character Collider Blocker
   - Enemy
   - Player
-  - 
+  - Post Processing
   - 
   - 
   - 

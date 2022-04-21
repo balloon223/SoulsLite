@@ -350,12 +350,13 @@ namespace SG
 
             if(inputHandler.jump_input)
             {
-                if(inputHandler.moveAmount > 0)
+                moveDirection = cameraObject.forward * inputHandler.vertical;
+                moveDirection += cameraObject.right * inputHandler.horizontal;
+                if (inputHandler.moveAmount > 0)
                 {
-                    moveDirection = cameraObject.forward * inputHandler.vertical;
-                    moveDirection += cameraObject.right * inputHandler.horizontal;
                     animatorHandler.PlayTargetAnimation("Jump", true);
                     moveDirection.y = 0;
+                    playerStats.TakeStaminaDamage(rollStaminaCost);
                     Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = jumpRotation;
                 }

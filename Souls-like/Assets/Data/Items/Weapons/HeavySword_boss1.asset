@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 6533bfc9fccc4784dbfbd955870eb80a, type: 3}
   itemName: Heavy Sword
-  modelPrefab: {fileID: 4583999802873294114, guid: 663a71492c15e2d4aa2b33667ced03c1,
+  modelPrefab: {fileID: 4583999802873294114, guid: b00d1f9b92a851644aa7ded1c29cc510,
     type: 3}
   isUnarmed: 0
   Right_Hand_Idle: Right_Arm_Idle_01

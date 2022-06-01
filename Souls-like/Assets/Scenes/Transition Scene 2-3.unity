@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 04f8d01a450d3d94195dfb972d49918b, type: 2}
 --- !u!1 &11265085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,18 +5041,6 @@ Transform:
   m_Father: {fileID: 1146046599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &727756890 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8935075114724832729, guid: f343d40c40840d84d8fedd6c485e9505,
-    type: 3}
-  m_PrefabInstance: {fileID: 1703183003}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5dbf2bbab02b2439b11a22c312a9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &735289948
 GameObject:
   m_ObjectHideFlags: 0
@@ -12838,7 +12826,7 @@ MonoBehaviour:
   maxStamina: 0
   currentStamina: 0
   isDead: 0
-  healthbar: {fileID: 727756890}
+  healthbar: {fileID: 0}
   staminabar: {fileID: 0}
   staminaRegenerationAmount: 1
   staminaRegenerationTimer: 0
@@ -14382,7 +14370,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1910822853
 MeshCollider:
@@ -16000,6 +15988,7 @@ MonoBehaviour:
   - demo_Narration
   - Example3Dialogue
   - Example4_dialogue
+  - Fox
   - Item_LookUp
   - Laura
   - MrCube
@@ -16009,87 +15998,24 @@ MonoBehaviour:
   - Transition2_3_Shadow_2
   - Transition2_3_Shadow_3
   - Transition2_3_Shadow_4
+  - Transition3_4_Shadow1
   - TriggeredDude
   - Witch
-  assignedIndex: 12
-  assignedID: 75149
-  assignedDialogue: Transition2_3_Shadow_1
-  interactionCount: 0
+  assignedIndex: 0
+  assignedID: 79710
+  assignedDialogue: Charlie
+  interactionCount: 58
   alias: 
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 21300000, guid: 959569ff2983ed949be02604af18f15e, type: 3}
   defaultPlayerSprite: {fileID: 0}
   targetManager: {fileID: 0}
-  preload: 1
+  preload: 0
   notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
-  S_playerDiags:
-  - commentCount: 1
-    s_comment:
-    - text: Why do I have to aid him?
-      extraData: ExtraData
-      inputSetIndex: 0
-      outputNodeIndex: 1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 0
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: We don't even know if he's the right vessel.
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 2
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 1
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: Remember how many times we have failed already?
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: Why am I taking part in this stupid affair?
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
+  S_playerDiags: []
   S_actionNodes: []
 --- !u!4 &1031632035874010190
 Transform:

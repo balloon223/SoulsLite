@@ -41,11 +41,12 @@ namespace SG
 
         private void OnTriggerEnter(Collider collision)
         {
+            Vector3 closestHitPoint = collision.ClosestPoint(transform.position);
             if (collision.tag == "Player")
             {
                 if (playerManager.isInvulnerable == false)
                 {
-                    Instantiate(hitParticles, collision.transform.position, Quaternion.identity);
+                    Instantiate(hitParticles, closestHitPoint, Quaternion.identity);
                     PlayerStats playerStats = collision.GetComponent<PlayerStats>();
 
                     if (playerStats != null)

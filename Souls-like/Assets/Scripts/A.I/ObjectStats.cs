@@ -44,7 +44,6 @@ namespace SG
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                animator.Play("rock_break");
                 audioSource.Play();
                 collider.enabled = !collider.enabled;
                 //HANDLE OBJECT DEATH

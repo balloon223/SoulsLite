@@ -23,7 +23,12 @@ namespace SG
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "attacks")
+            if (objectStats.currentHealth <= 0)
+            {
+                myButton.Play("rock_break", 0, 0.0f);
+            }
+
+            else
             {
                 myButton.Play("rock_shake", 0, 0.0f);
             }

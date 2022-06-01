@@ -8,7 +8,7 @@ namespace SG
     {
         AudioSource audioSource;
         PlayerManager playerManager;
-        public HealthBar healthbar;
+        public HealthBar_Player healthbar;
         public StaminaBar staminabar;
         AnimatorHandler animatorHandler;
 
@@ -19,7 +19,7 @@ namespace SG
         {
             audioSource = GetComponent<AudioSource>();
             playerManager = GetComponent<PlayerManager>();
-            healthbar = FindObjectOfType<HealthBar>();
+            healthbar = FindObjectOfType<HealthBar_Player>();
             staminabar = FindObjectOfType<StaminaBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
